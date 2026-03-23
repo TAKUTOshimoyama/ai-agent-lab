@@ -150,17 +150,15 @@ export default function Home() {
             </p>
 
             {/* GooeyText container — fixed height so absolute spans have space */}
-            <GooeyText
-              texts={RESULTS}
-              morphTime={1.2}
-              cooldownTime={4}
-              className="w-full"
-              textClassName="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed max-w-[820px]"
-              style={{
-                height: "clamp(160px, 22vw, 240px)",
-                display: "block",
-              } as React.CSSProperties}
-            />
+            <div style={{ height: "clamp(160px, 22vw, 240px)", width: "100%", position: "relative" }}>
+              <GooeyText
+                texts={RESULTS}
+                morphTime={1.2}
+                cooldownTime={4}
+                className="absolute inset-0 w-full h-full"
+                textClassName="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed max-w-[820px]"
+              />
+            </div>
 
             {/* Divider */}
             <div
