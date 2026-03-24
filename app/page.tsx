@@ -6,9 +6,9 @@ import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { CpuArchitecture } from "@/components/ui/cpu-architecture";
 
 const RESULTS = [
-  "仕入れ業務の改善。年間250万のコスト削減",
-  "製造業の機械トラブルを即時解決。年間200万のコスト削減。",
-  "現場監督の事務作業を激減。年間720万のコスト削減。",
+  "仕入れ業務の改善\n年間250万のコスト削減",
+  "製造業の機械トラブルを即時解決\n年間200万のコスト削減",
+  "現場監督の事務作業を激減\n年間720万のコスト削減",
 ];
 
 const SOLUTIONS = [
@@ -81,7 +81,7 @@ export default function Home() {
             AIエージェント研究所
           </span>
           <div style={{ display: "flex", gap: "2.5rem" }}>
-            {["実績", "ソリューション", "お問い合わせ"].map((item) => (
+            {["ユースケース", "ソリューション", "お問い合わせ"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
@@ -107,7 +107,7 @@ export default function Home() {
 
         {/* ── Hero / Results Section ── */}
         <section
-          id="実績"
+          id="ユースケース"
           className="dot-grid"
           style={{
             minHeight: "100vh",
@@ -146,17 +146,17 @@ export default function Home() {
             }}
           >
             <p className="section-label" style={{ marginBottom: "3rem" }}>
-              導入実績
+              ユースケース
             </p>
 
             {/* GooeyText container — fixed height so absolute spans have space */}
-            <div style={{ height: "clamp(160px, 22vw, 240px)", width: "100%", position: "relative" }}>
+            <div style={{ height: "clamp(220px, 28vw, 320px)", width: "100%", position: "relative" }}>
               <GooeyText
                 texts={RESULTS}
                 morphTime={1.2}
                 cooldownTime={4}
                 className="absolute inset-0 w-full h-full"
-                textClassName="text-2xl md:text-3xl lg:text-4xl font-light leading-relaxed max-w-[820px]"
+                textClassName="text-2xl md:text-3xl lg:text-4xl font-light whitespace-pre-line leading-[1.7] max-w-[820px]"
               />
             </div>
 
