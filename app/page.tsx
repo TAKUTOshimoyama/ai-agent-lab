@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 import { SplashScreen } from "@/components/ui/splash-screen";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { CpuArchitecture } from "@/components/ui/cpu-architecture";
@@ -70,16 +71,14 @@ export default function Home() {
             WebkitBackdropFilter: "blur(20px)",
           }}
         >
-          <span
-            style={{
-              fontSize: "0.85rem",
-              fontWeight: 300,
-              letterSpacing: "0.2em",
-              color: "#fff",
-            }}
-          >
-            AIエージェント研究所
-          </span>
+          <Image
+            src="/logo.png"
+            alt="仁株式会社"
+            width={160}
+            height={48}
+            style={{ filter: "invert(1)", objectFit: "contain" }}
+            priority
+          />
           <div style={{ display: "flex", gap: "2.5rem" }}>
             {["ユースケース", "ソリューション", "お問い合わせ"].map((item) => (
               <a
@@ -434,16 +433,13 @@ export default function Home() {
             gap: "1rem",
           }}
         >
-          <span
-            style={{
-              fontSize: "0.75rem",
-              fontWeight: 200,
-              letterSpacing: "0.15em",
-              color: "rgba(255,255,255,0.3)",
-            }}
-          >
-            AIエージェント研究所
-          </span>
+          <Image
+            src="/logo.png"
+            alt="仁株式会社"
+            width={100}
+            height={30}
+            style={{ filter: "invert(1) opacity(0.35)", objectFit: "contain" }}
+          />
           <span
             style={{
               fontSize: "0.6rem",
@@ -451,7 +447,7 @@ export default function Home() {
               color: "rgba(255,255,255,0.15)",
             }}
           >
-            © 2026 AI Agent Laboratory. All rights reserved.
+            © 2026 仁株式会社. All rights reserved.
           </span>
         </footer>
       </div>

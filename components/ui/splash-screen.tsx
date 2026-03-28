@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -131,18 +132,14 @@ export function SplashScreen({ onComplete }: SplashScreenProps) {
               justifyContent: "center",
             }}
           >
-            <span
-              style={{
-                color: "#fff",
-                fontSize: "0.9rem",
-                fontWeight: 200,
-                letterSpacing: "0.25em",
-                fontFamily: "-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif",
-                whiteSpace: "nowrap",
-              }}
-            >
-              AIエージェント研究所
-            </span>
+            <Image
+              src="/logo.png"
+              alt="仁株式会社"
+              width={200}
+              height={60}
+              style={{ filter: "invert(1)", objectFit: "contain" }}
+              priority
+            />
           </div>
         </div>
       </div>
