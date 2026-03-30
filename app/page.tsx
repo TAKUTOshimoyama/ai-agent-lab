@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { SplashScreen } from "@/components/ui/splash-screen";
 import { GooeyText } from "@/components/ui/gooey-text-morphing";
 import { CpuArchitecture } from "@/components/ui/cpu-architecture";
@@ -80,7 +81,7 @@ export default function Home() {
             priority
           />
           <div style={{ display: "flex", gap: "2.5rem" }}>
-            {["ユースケース", "ソリューション", "お問い合わせ"].map((item) => (
+            {["ユースケース", "ソリューション"].map((item) => (
               <a
                 key={item}
                 href={`#${item}`}
@@ -101,6 +102,24 @@ export default function Home() {
                 {item}
               </a>
             ))}
+            <Link
+              href="/contact"
+              style={{
+                fontSize: "0.7rem",
+                letterSpacing: "0.15em",
+                color: "rgba(255,255,255,0.4)",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.9)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,255,255,0.4)";
+              }}
+            >
+              お問い合わせ
+            </Link>
           </div>
         </nav>
 
